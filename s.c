@@ -633,6 +633,7 @@ p:
 									}
 								}			
 							}
+							count--;
 							Save_account();	
 						}
 
@@ -640,7 +641,7 @@ p:
 						//2.查找所有用户信息
 						User* ppp;
 						ppp = head;
-						while(ppp->next->next){
+						while(ppp->next){
 							memset(sendbuf, 0, 1024);
 							strcpy(sendbuf, "\n用户名:");
 							send(fd, sendbuf, strlen(sendbuf), 0);
