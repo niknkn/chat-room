@@ -496,7 +496,7 @@ p:
 	while (1){
 		memset(sendbuf, 0, 1024);
 		//登录后界面
-		strcpy(sendbuf, "请选择进行的操作：\n1.登录帐号\n2.注册帐号\n3.send(传输文件)\nend.退出\n");
+		strcpy(sendbuf, "请选择进行的操作：\n1.登录帐号\n2.注册帐号\nsend.传输文件\nend.退出\n");
 		send(fd, sendbuf, strlen(sendbuf), 0);
 		memset(recvbuf, 0, sizeof(recvbuf));
 		recv(fd, recvbuf, 1024, 0);
@@ -640,7 +640,7 @@ p:
 						//2.查找所有用户信息
 						User* ppp;
 						ppp = head;
-						while(ppp->next){
+						while(ppp->next->next){
 							memset(sendbuf, 0, 1024);
 							strcpy(sendbuf, "\n用户名:");
 							send(fd, sendbuf, strlen(sendbuf), 0);
